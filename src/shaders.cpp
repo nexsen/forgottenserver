@@ -24,7 +24,8 @@ bool Shaders::loadFromXml()
 		shaders.emplace_back(
 			static_cast<uint8_t>(pugi::cast<uint16_t>(shaderNode.attribute("id").value())),
 			shaderNode.attribute("name").as_string(),
-			shaderNode.attribute("premium").as_bool()
+			shaderNode.attribute("premium").as_bool(),
+			static_cast<int32_t>(pugi::cast<int32_t>(shaderNode.attribute("storage").value()))
 		);
 	}
 	shaders.shrink_to_fit();

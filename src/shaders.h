@@ -3,12 +3,13 @@
 
 struct Shader
 {
-	Shader(uint8_t id, std::string name, bool premium) :
-		name(std::move(name)), id(id), premium(premium) {}
+	Shader(uint8_t id, std::string name, bool premium, int32_t storage) :
+		name(std::move(name)), id(id), premium(premium), storage(storage) {}
 
 	uint8_t id;
 	std::string name;
 	bool premium;
+	int32_t storage;
 };
 
 class Shaders
