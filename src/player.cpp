@@ -4375,6 +4375,17 @@ bool Player::hasShader(const Shader* shader) const
 		return false;
 	}
 
+	if (shader->storage != 0)
+	{
+		int32_t value;
+		getStorageValue(shader->storage, value);
+
+		if (value > 0)
+		{
+			return true;
+		}
+	}
+	
 	const uint8_t tmpShaderId = shader->id - 1;
 
 	int32_t value;
